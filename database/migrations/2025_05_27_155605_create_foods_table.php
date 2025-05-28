@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('slug');
             $table->text('descrition');
             $table->string('image');
-            $table->string('price');
-            $table->integer('discount')->default(0); //waht datatypes is suitable for discount
+            $table->decimal('price',8,2);
+            $table->decimal('discount',8,2)->default(0); 
             $table->boolean('feature_foood')->default(0);
             $table->dateTime('deleted_at');
             $table->unsignedBigInteger('updated_by');

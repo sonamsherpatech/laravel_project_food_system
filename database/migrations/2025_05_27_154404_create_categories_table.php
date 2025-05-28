@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('icon')->nullable();
             $table->text('description');
-            $table->integer('rank'); //is this field integer
+            $table->integer('rank'); 
             $table->boolean('status');
             $table->dateTime('deleted_at');
             $table->timestamps();

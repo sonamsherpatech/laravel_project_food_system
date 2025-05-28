@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('position');
-            $table->integer('rank'); //is rank field type is integer
+            $table->integer('rank'); 
             $table->string('image');
             $table->string('facebook');
             $table->string('twitter');

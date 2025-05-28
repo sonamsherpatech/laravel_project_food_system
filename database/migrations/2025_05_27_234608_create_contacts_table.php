@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->text('subject'); //subject ko lagi text use garda hunxa?
+            $table->string('subject'); 
             $table->text('message');
             $table->timestamps();
         });

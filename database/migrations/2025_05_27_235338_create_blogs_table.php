@@ -14,15 +14,17 @@ return new class extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug'); //slug tw thulo hunxa so should we use string to it?
+            $table->unsignedBigInteger('blog_category_id');
+            $table->string('slug'); 
             $table->text('description');
             $table->string('image');
             $table->boolean('status');
-            $table->dateTime('deleted_at'); //deleteat ma current time dina mildaina??
+            $table->dateTime('deleted_at');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');
             $table->timestamps();
 
+            $table->foreign('blog_category_id')->references('id')->on('blog_categories');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users');
         });

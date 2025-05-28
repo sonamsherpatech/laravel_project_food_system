@@ -14,8 +14,16 @@ return new class extends Migration
         Schema::create('blog_categories', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug');
             $table->integer('rank');
+            $table->boolean('status');
+            $table->dateTime('deleted_at');
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('updated_by');
             $table->timestamps();
+
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->foreign('updated_by')->references('id')->on('users');
         });
     }
 

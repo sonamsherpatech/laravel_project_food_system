@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('mobile');
-            $table->date('date'); //for date and time column, what we use as types -> date and time??
+            $table->date('date'); 
             $table->time('time');
-            $table->integer('guest'); //is guest number??
+            $table->integer('guest'); 
             $table->boolean('status');
             $table->timestamps();
             $table->dateTime('deleted_at');

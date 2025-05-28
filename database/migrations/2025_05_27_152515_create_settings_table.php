@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('youtube');
             $table->string('linkedin');
             $table->string('instagram');
-            $table->string('google_map'); //Is Map should be in string??
+            $table->text('google_map'); 
             $table->timestamps();
             $table->dateTime('deleted_at');
             $table->unsignedBigInteger('created_by');
