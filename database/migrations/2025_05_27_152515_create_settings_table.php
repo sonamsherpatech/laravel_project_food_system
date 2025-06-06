@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('instagram');
             $table->text('google_map'); 
             $table->timestamps();
-            $table->dateTime('deleted_at');
+            $table->softDeletes('deleted_at');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
 

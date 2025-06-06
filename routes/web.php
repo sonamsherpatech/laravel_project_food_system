@@ -25,13 +25,11 @@ Route::get('/backend/dashboard', [DashboardController::class, 'index'])->name('b
 Route::post('/logout',[AuthController::class, 'logout'])->name('backend.logout');
 
 //assignment
-Route::get('/backend/setting', [SettingController::class, 'index'])->name('backend.setting.index');
+// Route::get('/backend/setting', [SettingController::class, 'index'])->name('backend.setting.index');
 
-// Route::get('/backend/category/create', function () {
-//     return view('backend.category.create');
-// });
-
-// Route::get('/backend/category', function () {
-//     return view('backend.category.index');
-// });
+Route::prefix('backend/')->name('backend.')->group(function(){
+    Route::resource('setting',SettingController::class)->only([
+        'create','store','update','edit'
+    ]);
+});
 

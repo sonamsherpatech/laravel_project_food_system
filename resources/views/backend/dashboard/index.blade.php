@@ -1,4 +1,4 @@
-@extends('backend.layout.dashboard_master');
+@extends('backend.layout.dashboard_master')
 
 
 @section('main-content')
